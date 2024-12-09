@@ -1,0 +1,110 @@
+/* Основной стиль страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background: url('https://cdn2.tu-tu.ru/image/pagetree_node_data/6/960820efa00acf17b273296638449907/') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: rgb(11, 255, 174);
+}
+
+header h2 {
+    font-size: 1.5em;
+    margin: 10px 0 0;
+    color: #000000;
+}
+
+/* Стиль для раздела "О себе" */
+section {
+    padding: 40px 20px;
+}
+
+#about,
+#article {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #0056b3;
+    font-size: 2em;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.2em;
+}
+
+/* Стиль для соцсетей */
+#social-media ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+#social-media ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#social-media ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+}
+
+#social-media ul li img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+#social-media ul li a:hover {
+    color: #0056b3;
+}
+
+/* Стиль для футера */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    #social-media ul {
+        grid-template-columns: 1fr 1fr; /* 2 колонки для мобильной версии */
+    }
+}
