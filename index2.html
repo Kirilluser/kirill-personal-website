@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Макет сайта</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXZpZ25laGp1cmNiZDh2OWY3ZW1oYjFrOHNrNzl0aHRiOWk5ZzFrNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7b4arnbo3THfzi0/giphy.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            width: 100%;
+            /* Убедитесь, что body занимает всю ширину */
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .hero .button {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .hero .button:hover {
+            background-color: #555;
+        }
+
+        .bio-section {
+            width: 100%;
+            /* Ширина на 100% доступного пространства */
+            max-width: 1000px;
+            /* Ограничиваем максимальную ширину */
+            margin: 2rem auto;
+            /* Центрируем блок */
+            padding: 2rem;
+            background-color: rgba(248, 243, 207, 0.365);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .bio-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .bio-text {
+            flex: 1;
+        }
+
+        .bio-content img {
+            max-width: 500px;
+            border-radius: 8px;
+        }
+
+        .bio-section img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .bio-section button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .bio-section button:hover {
+            background-color: #0056b3;
+        }
+
+        .quotes-section {
+            padding: 3rem 1rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        .quotes-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin: 1rem 0;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .footer p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>УСПЕХ — ЭТО НАУКА</h1>
+            <p>Если у вас есть условия, вы получите</p>
+            <h2>РЕЗУЛЬТАТ</h2>
+            <a href="index.html" class="button">Записаться</a>
+        </div>
+    </div>
+
+    <div class="bio-section">
+        <h1>Коломиец Кирилл</h1>
+        <div class="bio-content">
+            <div class="bio-text">
+                <p>
+                    Меня зовут Кирилл, я верю в силу дисциплины, саморaзвития и постоянного стремления к лучшему. Моя
+                    миссия — вдохновлять и помогать другим раскрывать свой потенциал, преодолевать преграды и достигать
+                    целей. С каждым шагом я учусь, расту и помогаю расти окружающим, создавая среду, в которой успех
+                    становится закономерным результатом.
+                </p>
+                <p>
+                    "Мечты сбываются, если вы не боитесь их достигать."
+                </p>
+                <button>Подробнее</button>
+            </div>
+            <img src="images/shutt.jpg" alt="Кирилл за компьютером">
+        </div>
+    </div>
+
+
+
+
+    <section class="quotes-section">
+        <h2>Мотивирующие цитаты</h2>
+        <p class="quote">"Ваше время ограничено, не тратьте его, живя чужой жизнью." — Стив Джобс</p>
+        <p class="quote">"Не бойтесь отказаться от хорошего ради великого." — Джон Рокфеллер</p>
+        <p class="quote">"Успех приходит к тем, кто занят его поиском." — Генри Дэвид Торо</p>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 All rights reserved. Все права защищены.</p>
+    </footer>
+</body>
+
+</html>
