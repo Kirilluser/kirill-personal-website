@@ -2,183 +2,203 @@
 <html lang="ru">
 
 <head>
-    <link rel="icon" href="images/persfrontimg.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirill's Personal Website</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Макет сайта</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            background: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXZpZ25laGp1cmNiZDh2OWY3ZW1oYjFrOHNrNzl0aHRiOWk5ZzFrNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7b4arnbo3THfzi0/giphy.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            width: 100%;
+            /* Убедитесь, что body занимает всю ширину */
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .hero .button {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .hero .button:hover {
+            background-color: #555;
+        }
+
+        .bio-section {
+            width: 100%;
+            /* Ширина на 100% доступного пространства */
+            max-width: 1000px;
+            /* Ограничиваем максимальную ширину */
+            margin: 2rem auto;
+            /* Центрируем блок */
+            padding: 2rem;
+            background-color: rgba(248, 243, 207, 0.365);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .bio-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .bio-text {
+            flex: 1;
+        }
+
+        .bio-content img {
+            max-width: 500px;
+            border-radius: 8px;
+        }
+
+        .bio-section img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .bio-section button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .bio-section button:hover {
+            background-color: #0056b3;
+        }
+
+        .quotes-section {
+            padding: 3rem 1rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        .quotes-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin: 1rem 0;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .footer p {
+            font-size: 1rem;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <div class="mrg">
-            <a href=""><img src="images/persfrontimg.png" alt="logo"></a>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>УСПЕХ — ЭТО НАУКА</h1>
+            <p>Если у вас есть условия, вы получите</p>
+            <h2>РЕЗУЛЬТАТ</h2>
+            <a href="index2.html" class="button">Записаться</a>
         </div>
-        <div class="navbar">
-            <div class="logo">
-                <a href="index2.html"> Kirill Website</a>
+    </div>
+
+    <div class="bio-section">
+        <h1>Коломиец Кирилл</h1>
+        <div class="bio-content">
+            <div class="bio-text">
+                <p>
+                    Меня зовут Кирилл, я верю в силу дисциплины, саморaзвития и постоянного стремления к лучшему. Моя
+                    миссия — вдохновлять и помогать другим раскрывать свой потенциал, преодолевать преграды и достигать
+                    целей. С каждым шагом я учусь, расту и помогаю расти окружающим, создавая среду, в которой успех
+                    становится закономерным результатом.
+                </p>
+                <p>
+                    "Мечты сбываются, если вы не боитесь их достигать."
+                </p>
+                <button>Подробнее</button>
             </div>
-            <div class="menu-icon" id="menu-icon">
-                &#9776;
-            </div>
-            <nav id="navbar-links" class="navbar-links">
-                <ul>
-                    <li><a href="index2.html">Главная</a></li>
-                    <li><a href="#">Особенности</a></li>
-                    <li class="contact-item">
-                        <a href="#">Контакты</a>
-                        <div class="contact-info">
-                            <p>Телефон: +7(771)256-2310</p>
-                            <p>Почта: kolomieckirill38@gmail.com</p>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
+            <img src="images/shutt.jpg" alt="Кирилл за компьютером">
         </div>
+    </div>
 
-    </header>
-    <div class="fonpn">
 
-        <h1>Приветствую всех!</h1>
-        <h2>Сайт создан с целью небольшого знакомства)</h2>
-</div>
-        <section id="about">
-        <h3>О себе</h3>
 
-        <p><span class="bold-text">Меня зовут Кирилл</span>, и я — молодой человек, увлеченный технологией и стремящийся к постоянному развитию. Моя
-            жизнь всегда была связана с поиском новых возможностей, будь то в сфере образования, работы или путешествий.
-        </p><br>
-        <p><span class="bold-text">Сейчас я студент первого курса </span>бакалавриата в <a href="https://kineu.edu.kz/ru">Костанайском инженерно-экономическом университете им. Мыржакыпа Дулатова </a>, где изучаю
-            вычислительную технику и программное обеспечение.</p><br>
-        <p><span class="bold-text">Программирование и дизайн</span> — это не просто профессия для меня, а настоящее увлечение, которое стало частью
-            моей жизни. На протяжении последнего года я активно изучаю веб-разработку, графический дизайн, а также
-            работаю с нейросетями, поглощая все новые знания и пытаясь применить их на практике. Я уверен, что
-            технологии — это будущее, и хочу быть частью этого прогресса.</p><br>
-        <p><span class="bold-text">До того как я поступил в университет</span>, я работал разнорабочим и параллельно учился. Этот опыт научил меня
-            трудолюбию и гибкости, ведь работая в разных сферах, я понял, как важно быть адаптивным и открытым к новым
-            возможностям. Все, чему я научился, помогает мне сегодня в моей учебе и работе.</p><br>
-        <p><span class="bold-text">Моя цель</span> — не просто развиваться в своей сфере, но и быть свободным. Я всегда был вдохновлен идеей удаленной
-            работы, которая позволяет работать, не ограничиваясь географией, и при этом совмещать работу с путешествиями
-            и изучением новых культур. Именно поэтому я активно развиваюсь как фрилансер, и с нетерпением жду новых
-            проектов и возможностей для сотрудничества.</p><br>
-        <p><span class="bold-text">Буду рад</span> продолжить знакомство с новыми людьми, обмениваться опытом и работать над интересными проектами,
-            которые могут изменить мир.</p><br>
-        <p><span class="bold-text">В будущем я планирую </span>продолжать свое образование и стать экспертом в своей области, а также реализовать идеи,
-            которые могут быть полезны как обществу, так и мне лично.</p><br>
-        <p><span class="bold-text">Вдохновляюсь</span> не только программированием и дизайном, но и криптовалютами, которые открывают новые горизонты в
-            мире финансов. Моё увлечение криптовалютами и блокчейном, с каждым днем растет, и я с нетерпением жду новых
-            возможностей для применения этих технологий.</p><br>
-        <img src="images/1fon.png" alt="Картинка о себе" class="about-image" />
-        <h4>Сайт будет дополняться и совершенствоваться :)</h4>
-    </section>
-    <section id="about">
-        <h3>"Почему я выбрал IT?"</h3>
-        <br>
-        <p><span class="bold-text">Мир технологий развивается с невероятной скоростью </span>— если ещё несколько
-            десятилетий назад компьютеры занимали целые комнаты и были доступны лишь немногим, то сегодня они стали
-            неотъемлемой частью нашей повседневной жизни и помещаются в карманах.</p>
-        <br>
-        <p> <span class="bold-text">IT</span> — это не просто профессия, это мир, который меняет всё вокруг нас.
-            В IT нет границ. Это сфера, где возраст, место жительства или образование отходят на второй план. Здесь
-            важны идеи, знания и способность учиться. Ты можешь быть обычным студентом, писать код ночью в своей
-            комнате, а через несколько лет стать частью команды, работающей над проектами, которые меняют мир.
-        </p>
-        <br>
-        <p> <span class="bold-text">Чем IT привлекательно?</span> Во-первых, это свобода. Ты можешь работать из любой
-            точки мира, создавать собственные
-            проекты или помогать другим воплощать их мечты. Во-вторых, это постоянное развитие. В IT нельзя остановиться
-            на достигнутом — технологии требуют, чтобы ты всегда был в курсе новых трендов.</p>
-        <br>
-        <p> <span class="bold-text">Но главное</span> — это творчество. Написание кода, проектирование интерфейсов или
-            создание приложений — это
-            искусство. Каждый проект — это новая история, которую ты рассказываешь миру через технологии.</p>
-        <br>
-        <p><span class="bold-text">Начать свой путь в IT</span> — это возможность не только освоить новые навыки, но и
-            научиться справляться с ошибками. В этой сфере нет места для страха перед неудачами, ведь каждый опыт — это
-            шаг вперёд. Важно не останавливаться, а продолжать двигаться, уверенно веря в свои силы и готовность к
-            трудным задачам. IT открывает двери для тех, кто стремится развиваться и достигать высоких целей.</p>
-        <br>
-        <p><span class="bold-text">IT</span> — это больше, чем профессия. Это возможность быть частью будущего.</p>
-        <br>
-        <img src="images/2fon.jpg" alt="Картинка о себе" class="about-image" />
-        <h4>Стремительное развитие IT-сферы: современные технологии меняют наше будущее, открывая новые возможности и
-            перспективы</h4>
+
+    <section class="quotes-section">
+        <h2>Мотивирующие цитаты</h2>
+        <p class="quote">"Ваше время ограничено, не тратьте его, живя чужой жизнью." — Стив Джобс</p>
+        <p class="quote">"Не бойтесь отказаться от хорошего ради великого." — Джон Рокфеллер</p>
+        <p class="quote">"Успех приходит к тем, кто занят его поиском." — Генри Дэвид Торо</p>
     </section>
 
-
-    <section id="social-media">
-        <h3>Мои соцсети</h3>
-        <ul>
-            <li>
-                <a href="https://t.me/NarrativeLive">
-                    <img src="https://avatars.mds.yandex.net/i?id=66fcbbb91b545be3bc48e2f5326da5ee_l-3521501-images-thumbs&n=13"
-                        alt="Telegram" />
-                    Телеграмм
-                </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/kirill-kolomiyets-ab2a9a2b5/">
-                    <img src="https://banner2.cleanpng.com/20180525/czt/kisspng-computer-icons-linkedin-clip-art-style-5b0842ba219a96.3076104915272680261377.jpg"
-                        alt="LinkedIn" />
-                    LinkedIn
-                </a>
-            </li>
-            <li>
-                <a href="https://x.com/Narrative_Live">
-                    <img src="https://avatars.mds.yandex.net/i?id=a1c87c46342db57711b938d6b6923a48_l-4114739-images-thumbs&n=13"
-                        alt="Twitter" />
-                    Twitter
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/Kirilluser">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
-                        alt="GitHub" />
-                    GitHub
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/your-profile">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                        alt="Facebook" />
-                    Facebook
-                </a>
-            </li>
-            <li>
-                <a href="https://www.instagram.com/your-profile">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/600px-Instagram_logo_2022.svg.png"
-                        alt="Instagram" />
-                    Instagram
-                </a>
-            </li>
-        </ul>
-    </section>
-
-    <footer style="background-color: #47C2CB; padding: 20px; color: white; text-align: center;">
-        <div class="footer-content">
-          <h3 class="im">Свяжитесь со мной</h3>
-          <p>ул. Кочубея, 6, Костанай, Казахстан</p>
-          <p>Телефон: +7 (747) 620-59-37</p>
-          <p>Факс: +7 (495) 000-00-00</p>
-          <p>Email: <a href="mailto:info@mysite.ru" style="color: white;">kolomieckirill38@gmail.com</a></p>
-          <div class="social-icons">
-            <a href="#"><img src="https://avatars.mds.yandex.net/i?id=ed9b1c12394b46304cc6c6b74998461ac4415600-4566892-images-thumbs&n=13" alt="VK"></a>
-            <a href="#"><img src="https://avatars.mds.yandex.net/i?id=a1c87c46342db57711b938d6b6923a48_l-4114739-images-thumbs&n=13" alt="Twitter"></a>
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"></a>
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/600px-Instagram_logo_2022.svg.png" alt="Instagram"></a>
-          </div>
-        </div>
-        <form action="#" method="post" class="footer-form">
-          <input type="text" name="name" placeholder="Имя" required>
-          <input type="email" name="email" placeholder="Эл. почта" required>
-          <input type="tel" name="phone" placeholder="Телефон" required>
-          <textarea name="message" placeholder="Добавьте сообщение..." rows="4"></textarea>
-          <button type="submit">Отправить</button>
-        </form>
-        <p>© 2035 All rights reserved - Все права защищены</p>
-      </footer>
-
-    <script src="files/script.js"></script>
+    <footer class="footer">
+        <p>© 2024 All rights reserved. Все права защищены.</p>
+    </footer>
 </body>
 
 </html>
