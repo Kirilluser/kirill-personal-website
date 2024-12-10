@@ -1,12 +1,20 @@
-/* Основные стили для страницы */
-body {
-    font-family: Arial, sans-serif;
+/* Сброс стилей для всех элементов */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    box-sizing: border-box;
+    /* Это поможет избежать расширения элементов за пределы экрана */
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    overflow-x: hidden;
+    /* Отключаем горизонтальную прокрутку */
+}
+
+/* Основной стиль для шапки */
 header {
     background-color: #333;
     color: white;
@@ -15,22 +23,23 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    box-sizing: border-box;
 }
 
+/* Стили для фона приветствия */
 .fonpn {
-    background: url('https://avatars.mds.yandex.net/i?id=b7e1efa8af18b3ea7e29227bd6b5f713_l-5213440-images-thumbs&n=13') no-repeat center center/cover;
-    color: rgb(0, 0, 0);
+    background: url('https://wallpapers.com/images/hd/blue-texture-pictures-0z96n7a06odbk48g.jpg') no-repeat center center/cover;
+    color: rgb(253, 231, 33);
     text-align: center;
     padding: 50px 0;
 }
 
+/* Навигационная панель */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Распределяет элементы по краям */
     align-items: center;
     width: 100%;
-    box-sizing: border-box; /* Учитывает padding в ширине */
+    position: relative;
+    /* Чтобы позиционировать бургер относительно родителя */
 }
 
 .navbar a {
@@ -40,18 +49,28 @@ header {
     margin-right: 20px;
 }
 
+/* Эффект наведения на ссылки */
+.navbar a:hover {
+    color: #ff6347;
+    /* Цвет для наведения */
+}
+
+/* Иконка меню */
 .menu-icon {
     font-size: 2em;
     cursor: pointer;
-    display: none; /* Скрываем иконку по умолчанию */
-    order: 2; /* Иконка будет справа */
+    display: none;
+    /* Скрываем иконку на десктопах */
+    position: absolute;
+    /* Фиксируем иконку */
+    right: 20px;
+    /* Позиционируем её справа */
 }
 
 .navbar-links {
     display: flex;
-    justify-content: flex-start; /* Ссылки по левому краю */
     width: 100%;
-    box-sizing: border-box;
+    justify-content: flex-end;
 }
 
 .navbar-links ul {
@@ -59,25 +78,28 @@ header {
     margin: 0;
     padding: 0;
     display: flex;
-    width: 100%;
 }
 
 .navbar-links li {
     margin-right: 20px;
 }
 
-/* Стили для мобильной версии */
+/* Мобильная версия */
 @media (max-width: 768px) {
+
+    /* Скрываем меню на мобильных устройствах */
     .navbar-links {
         display: none;
-        width: 100%;
         position: absolute;
         top: 50px;
-        left: 0;
+        right: 0;
+        /* Прилегаем к правому краю */
         background-color: #333;
         text-align: center;
-        box-sizing: border-box;
-        overflow: hidden; /* Скрыть всё, что выходит за пределы */
+        width: 250px;
+        /* Ограничиваем ширину меню */
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        /* Тень для меню */
     }
 
     .navbar-links ul {
@@ -89,13 +111,20 @@ header {
         margin: 10px 0;
     }
 
+    /* Показываем иконку меню на мобильных устройствах */
     .menu-icon {
-        display: block; /* Показываем иконку на мобильных устройствах */
-        z-index: 10; /* Убедимся, что иконка будет сверху */
+        display: block;
     }
 
+    /* Показываем меню, когда оно активно */
     .navbar-links.active {
-        display: block; /* Показываем меню при клике */
+        display: block;
+    }
+
+    /* Эффект наведения на ссылки в мобильном меню */
+    .navbar-links a:hover {
+        color: #ff6347;
+        /* Цвет для наведения */
     }
 }
 
@@ -136,6 +165,7 @@ p {
 #social-media ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    /* 3 колонки */
     gap: 20px;
     list-style-type: none;
     padding: 0;
@@ -153,12 +183,18 @@ p {
     color: #333;
 }
 
+#social-media ul li a:hover {
+    color: #0056b3;
+    /* Синий цвет при наведении */
+}
+
 #social-media img {
     width: 40px;
     height: 40px;
     margin-right: 10px;
 }
 
+/* Стиль для подвала */
 footer {
     text-align: center;
     padding: 20px 0;
