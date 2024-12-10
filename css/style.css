@@ -28,6 +28,9 @@ header {
     font-weight: bold;
 }
 
+.mrg{
+    padding-right: 15px;
+}
 /* Стили для фона приветствия */
 .fonpn {
     background: url('https://wallpapers.com/images/hd/blue-texture-pictures-0z96n7a06odbk48g.jpg') no-repeat center center/cover;
@@ -43,6 +46,38 @@ header {
     width: 100%;
     position: relative;
     /* Чтобы позиционировать бургер относительно родителя */
+}
+
+/* Скрыть блок с контактной информацией по умолчанию */
+.contact-info {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 10;
+    transform: translateX(-50%); /* Смещение на центр */
+}
+
+/* Позиционирование ссылки "Контакты" */
+.contact-item {
+    position: relative;
+}
+
+/* Показать блок с контактами при наведении на родительский элемент */
+.contact-item:hover .contact-info {
+    display: block;
+}
+
+/* Дополнительные стили для внешнего вида */
+.contact-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
 }
 
 .navbar a {
