@@ -15,6 +15,7 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .fonpn {
@@ -29,6 +30,7 @@ header {
     justify-content: space-between; /* Распределяет элементы по краям */
     align-items: center;
     width: 100%;
+    box-sizing: border-box; /* Учитывает padding в ширине */
 }
 
 .navbar a {
@@ -48,6 +50,8 @@ header {
 .navbar-links {
     display: flex;
     justify-content: flex-start; /* Ссылки по левому краю */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .navbar-links ul {
@@ -55,6 +59,7 @@ header {
     margin: 0;
     padding: 0;
     display: flex;
+    width: 100%;
 }
 
 .navbar-links li {
@@ -71,6 +76,8 @@ header {
         left: 0;
         background-color: #333;
         text-align: center;
+        box-sizing: border-box;
+        overflow: hidden; /* Скрыть всё, что выходит за пределы */
     }
 
     .navbar-links ul {
@@ -84,6 +91,7 @@ header {
 
     .menu-icon {
         display: block; /* Показываем иконку на мобильных устройствах */
+        z-index: 10; /* Убедимся, что иконка будет сверху */
     }
 
     .navbar-links.active {
