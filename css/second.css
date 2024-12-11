@@ -125,6 +125,7 @@
             justify-content: center;
             text-align: center;
             color: white;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4963235294117647) 20%, rgba(0,0,0,0.499124649859944) 70%, rgba(197,206,145,0) 85%); 
         }
 
         .hero::after {
@@ -134,7 +135,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            
             z-index: 1;
         }
 
@@ -228,16 +229,6 @@
             }
         }
 
-        /*.bio-section {
-            width: 100%;
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: rgba(248, 243, 207, 0.365);
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            text-align: left;
-        }*/
 
         .bio-content {
             display: flex;
@@ -278,9 +269,9 @@
         }
 
         .quotes-section {
-            padding: 3rem 1rem;
+            padding: 7rem 1rem 3rem;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.7);
+            background: linear-gradient(0deg, rgba(0,0,0,0.4963235294117647) 20%, rgba(0,0,0,0.499124649859944) 70%, rgba(197,206,145,0) 85%); 
             color: white;
         }
 
