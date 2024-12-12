@@ -7,7 +7,7 @@
         body {
             font-family: Arial, sans-serif;
             overflow-x: hidden;
-            background: url('https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXZpZ25laGp1cmNiZDh2OWY3ZW1oYjFrOHNrNzl0aHRiOWk5ZzFrNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUA7b4arnbo3THfzi0/giphy.webp') no-repeat center center fixed;
+            background: url('../sourse/giphy.webp') no-repeat center center fixed;
             background-size: cover;
             color: #333;
             width: 100%;
