@@ -18,6 +18,8 @@ body {
     display: flex;
     flex: 1; /* Растягиваем контейнер на всю оставшуюся высоту */
     padding-right: 200px;
+    padding-top: 20px;
+    padding-bottom: 60px;
 }
 
 header {
@@ -90,7 +92,7 @@ h1 {
 }
 .book-details {
     margin-left: 100px; /* Отступ, чтобы основной контент не перекрывал боковую панель */
-    padding: 20px;
+    padding: 50px;
     background-color: #fff; /* Белый фон для основной книги */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex: 1; /* Растягиваем основной контент на оставшуюся ширину */
@@ -147,6 +149,145 @@ h1 {
 
 .btn:hover {
     background-color: #218838;
+}
+
+.burger-line{
+    font-size: 30px;
+    display: flex;
+    text-align: left;
+}
+/* Общие стили (оставляем без изменений) */
+.menu-toggle{
+    font-size: 30px;
+}
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em; /* Уменьшаем размер шрифта для хедера */
+    }
+
+    .container2 {
+        flex-direction: column; /* Делаем контент вертикальным */
+        padding-right: 0; /* Убираем отступы */
+    }
+
+    .sidebar {
+        width: 100%; /* Панель занимает всю ширину экрана */
+        height: auto; /* Высота боковой панели будет адаптироваться */
+        position: static; /* Убираем фиксированное позиционирование */
+        box-shadow: none; /* Убираем тень для боковой панели */
+        padding: 10px 0;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-item {
+        padding: 15px;
+        width: 100%; /* Ширина списка будет 100% для удобства клика */
+        text-align: center; /* Выравнивание текста по центру */
+    }
+
+    .book-details {
+        margin-left: 0; /* Убираем отступ */
+        padding: 15px;
+    }
+
+    .book-image img {
+        max-width: 100%; /* Изображение растягивается по ширине */
+        margin: 0 auto;
+        display: block; /* Центрируем изображение */
+    }
+
+    .book-info h2 {
+        font-size: 1.3em; /* Уменьшаем размер шрифта заголовка */
+    }
+
+    .book-info p, .book-info ul, .book-info li {
+        font-size: 0.9em; /* Уменьшаем размер шрифта для текста */
+    }
+
+    .read-more, .btn {
+        width: 100%; /* Кнопки растягиваются по ширине */
+        padding: 15px;
+    }
+}
+
+/* Медиазапросы для планшетов */
+@media (max-width: 1024px) {
+    .book-page {
+        flex-direction: column; /* Структура страницы будет вертикальной */
+    }
+
+    .container1, .container2 {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%; /* Панель боковая будет занимать всю ширину */
+        height: auto; /* Высота панели будет адаптироваться */
+    }
+
+    .book-details {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .book-image img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+/* Изменим видимость боковой панели для мобильных устройств */
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Сначала сделаем панель фиксированной */
+    top: 90px;
+    left: -250px; /* Скрываем боковую панель за пределы экрана */
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out; /* Добавим плавное появление */
+    z-index: 10;
+}
+
+/* Для мобильных устройств показываем боковую панель при активации */
+.sidebar.active {
+    left: 0; /* Показываем панель при добавлении класса "active" */
+}
+
+/* Скрыть боковую панель на десктопах */
+@media (min-width: 1024px) {
+    .sidebar {
+        position: static;
+        width: 250px;
+        height: auto;
+        left: 0;
+    }
+}
+@media (max-width: 768px) {
+    .sidebar {
+        left: -250px; /* Панель скрыта по умолчанию на мобильных */
+    }
+
+    /* При активной панели она появляется */
+    .sidebar.active {
+        left: 0; /* Показываем панель на мобильных */
+    }
+
+    /* Стиль для кнопки бургер-меню */
+    .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+        padding: 5px;
+    }
 }
 
 footer {

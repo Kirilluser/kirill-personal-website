@@ -1,8 +1,9 @@
+// Получаем элементы
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.querySelector('.sidebar');
 
-const bookItems = document.querySelectorAll('.book-item');
-bookItems.forEach(item => {
-    item.addEventListener('click', () => {
-        bookItems.forEach(i => i.classList.remove('active')); // Убираем подсветку у всех
-        item.classList.add('active'); // Добавляем подсветку для текущей
-    });
+// Добавляем обработчик событий для кнопки
+menuToggle.addEventListener('click', () => {
+    // Добавляем или удаляем класс "active", чтобы показать или скрыть боковую панель
+    sidebar.classList.toggle('active');
 });
