@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('../sourse/giphy.webp') no-repeat center center fixed; /* Фон всей страницы */
+    background-size: cover; /* Чтобы фон полностью покрывал страницу */
+    color: #333;
+    min-height: 100vh; /* Чтобы body заполняло всю высоту */
+    display: flex;
+    flex-direction: column;
+}
+
+.container2 {
+    display: flex;
+    flex: 1; /* Растягиваем контейнер на всю оставшуюся высоту */
+    padding-right: 200px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+header {
+    background-color: #333; /* Цвет навбара */
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.book-page {
+    display: flex;
+    margin-top: 80px; /* Отступ сверху, чтобы избежать перекрытия с навбаром */
+    flex: 1;
+}
+
+.sidebar {
+    width: 250px; /* Фиксированная ширина боковой панели */
+    background-color: #f4f4f4; /* Серый фон для боковой панели */
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    position: sticky; /* Панель будет оставаться вверху страницы */
+    top: 90px; /* Отступ от навбара */
+    bottom: 0; /* Панель будет растягиваться до футера */
+    height: calc(100vh - 90px); /* Высота панели будет равна высоте экрана минус высота навбара */
+    overflow-y: auto; /* Чтобы содержимое не выходило за границы */
+    z-index: 10;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.book-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.book-item a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.book-item a:hover {
+    color: #007BFF;
+}
+
+.book-item.active a {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.bkit a:hover {
+    color: #007BFF;
+}
+.book-details {
+    margin-left: 100px; /* Отступ, чтобы основной контент не перекрывал боковую панель */
+    padding: 50px;
+    background-color: #fff; /* Белый фон для основной книги */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Растягиваем основной контент на оставшуюся ширину */
+}
+
+.book-image img {
+    max-width: 300px;
+    margin-right: 20px;
+}
+
+.book-info {
+    flex: 1;
+}
+
+.book-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.book-info p {
+    margin-bottom: 15px;
+}
+
+.book-info ul {
+    margin-bottom: 15px;
+}
+
+.book-info li {
+    margin-bottom: 5px;
+}
+
+.read-more {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.read-more:hover {
+    background-color: #0056b3;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+.burger-line{
+    font-size: 30px;
+    display: flex;
+    text-align: left;
+}
+/* Общие стили (оставляем без изменений) */
+.menu-toggle{
+    font-size: 30px;
+}
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em; /* Уменьшаем размер шрифта для хедера */
+    }
+
+    .container2 {
+        flex-direction: column; /* Делаем контент вертикальным */
+        padding-right: 0; /* Убираем отступы */
+    }
+
+    .sidebar {
+        width: 100%; /* Панель занимает всю ширину экрана */
+        height: auto; /* Высота боковой панели будет адаптироваться */
+        position: static; /* Убираем фиксированное позиционирование */
+        box-shadow: none; /* Убираем тень для боковой панели */
+        padding: 10px 0;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-item {
+        padding: 15px;
+        width: 100%; /* Ширина списка будет 100% для удобства клика */
+        text-align: center; /* Выравнивание текста по центру */
+    }
+
+    .book-details {
+        margin-left: 0; /* Убираем отступ */
+        padding: 15px;
+    }
+
+    .book-image img {
+        max-width: 100%; /* Изображение растягивается по ширине */
+        margin: 0 auto;
+        display: block; /* Центрируем изображение */
+    }
+
+    .book-info h2 {
+        font-size: 1.3em; /* Уменьшаем размер шрифта заголовка */
+    }
+
+    .book-info p, .book-info ul, .book-info li {
+        font-size: 0.9em; /* Уменьшаем размер шрифта для текста */
+    }
+
+    .read-more, .btn {
+        width: 100%; /* Кнопки растягиваются по ширине */
+        padding: 15px;
+    }
+}
+
+/* Медиазапросы для планшетов */
+@media (max-width: 1024px) {
+    .book-page {
+        flex-direction: column; /* Структура страницы будет вертикальной */
+    }
+
+    .container1, .container2 {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%; /* Панель боковая будет занимать всю ширину */
+        height: auto; /* Высота панели будет адаптироваться */
+    }
+
+    .book-details {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .book-image img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+/* Изменим видимость боковой панели для мобильных устройств */
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Сначала сделаем панель фиксированной */
+    top: 90px;
+    left: -250px; /* Скрываем боковую панель за пределы экрана */
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out; /* Добавим плавное появление */
+    z-index: 10;
+}
+
+/* Для мобильных устройств показываем боковую панель при активации */
+.sidebar.active {
+    left: 0; /* Показываем панель при добавлении класса "active" */
+}
+
+/* Скрыть боковую панель на десктопах */
+@media (min-width: 1024px) {
+    .sidebar {
+        position: static;
+        width: 250px;
+        height: auto;
+        left: 0;
+    }
+}
+@media (max-width: 768px) {
+    .sidebar {
+        left: -250px; /* Панель скрыта по умолчанию на мобильных */
+    }
+
+    /* При активной панели она появляется */
+    .sidebar.active {
+        left: 0; /* Показываем панель на мобильных */
+    }
+
+    /* Стиль для кнопки бургер-меню */
+    .menu-toggle {
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+        padding: 5px;
+    }
+}
+
+footer {
+    background-color: #333; /* Фон футера */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Чтобы футер всегда был внизу */
+}
