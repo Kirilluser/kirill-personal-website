@@ -1,0 +1,285 @@
+/* Общие стили */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../sourse/giphy.webp') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Контейнер */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Общие стили для navbar */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+/* Стили для всплывающего окна с контактами */
+.contact-item {
+    position: relative;
+    display: inline-block;
+}
+
+.contact-info {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Показывать окно при наведении */
+.contact-item:hover .contact-info {
+    display: block;
+}
+
+/* Проверка на выход за пределы экрана */
+.contact-item:hover .contact-info {
+    display: block;
+    left: 0;
+    right: 0;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* При необходимости корректируем положение для предотвращения выхода за экран */
+.contact-item:hover .contact-info {
+    left: 0;
+    right: auto;
+}
+
+.contact-item:hover .contact-info {
+    left: auto;
+    right: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Меню справа, логотип слева */
+    width: 100%;
+}
+.navbar a:hover {
+    color: #ff6347;
+    /* Цвет для наведения */
+}
+.logo {
+    flex-shrink: 0; /* Логотип не сжимается */
+}
+
+.logo img {
+    height: 30px; /* Размер логотипа */
+    width: auto;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px; /* Отступы между пунктами меню */
+}
+
+.navbar-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    position: relative;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.navbar-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Иконка гамбургера для мобильных */
+.menu-icon {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+/* Категории */
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007BFF;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.categories a:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Сетка статей */
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Карточка статьи */
+.article {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Равномерное размещение контента */
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #ddd; /* Добавляем границу */
+}
+
+/* Карточка статьи при наведении */
+.article:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid #007BFF; /* Изменяем цвет рамки при наведении */
+}
+
+.article h3 {
+    margin: 0;
+    padding: 20px;
+    font-size: 1.5em;
+    color: #333;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+}
+
+.article p {
+    padding: 15px 20px;
+    color: #555;
+    font-size: 1em;
+    flex-grow: 1; /* Распределение пространства */
+}
+
+.article a {
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007BFF;
+    padding: 10px 0;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+    transition: background-color 0.3s;
+}
+
+.article a:hover {
+    background-color: #0056b3;
+}
+
+/* Адаптивность */
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        margin: 0 10px; /* Добавляем отступы с обеих сторон */
+        padding: 20px; /* Можно оставить, если нужно сохранить внутренние отступы */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .categories a {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .article h3 {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    .article p {
+        font-size: 0.9em;
+    }
+
+    .article a {
+        font-size: 0.9em;
+    }
+}
